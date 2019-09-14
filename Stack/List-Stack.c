@@ -35,7 +35,7 @@ int peek(Stack *h)              // Returns top element of Stack
     }
 }
 
-int empty(Stack *h)             // Checks if Stack is empty or not
+int isEmpty(Stack *h)             // Checks if Stack is empty or not
 {
 	if(h == NULL)
 	{
@@ -54,7 +54,7 @@ int main()
     push(&st,40);
     push(&st,50);
 
-    while(!empty(st))
+    while(!isEmpty(st))
     {
         printf("%d ",peek(st));              // prints :- 50 40 30 20 10 
         pop(&st);
