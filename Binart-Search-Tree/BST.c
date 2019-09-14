@@ -126,7 +126,6 @@ Tree* del_Element(Tree* node,int element)       // Deletes node with given value
         Tree *itr = node->right;
         while(itr->left->left)
         {
-            
             itr = itr->left;
         }
         Tree *temp = itr->left;
@@ -154,9 +153,9 @@ void delElement(Tree **root,int element)
 
 int main()
 {
-    Tree *root = NULL;                  // Declaring
+    Tree *root = NULL;                  // Declaring an empty Tree
 
-    insert(&root,5);                    // Inserting elements
+    insert(&root,5);                    // Inserting elements in the Tree
     insert(&root,3);
     insert(&root,1);
     insert(&root,4);
