@@ -55,18 +55,33 @@ void insert(int k)          // Inserts items into the tree
     swim(n-1);        
 }
 
+int get_max()				// Returns max element
+{
+    return arr[0];
+}
+int del_max()				// Returns and delete max element
+{
+    int k = get_max();
+    swap(0,n-1);			// swapping first element with the last
+    n--;
+    
+    if(n == 0)
+        return -1;
+        
+    sink(0);				// sinking first element	
+    return k;
+}
+
 int main()
 {
-    int size;
-    scanf("%d",&size);          // Enter size of Heap Tree
-
-    for(int i=0;i<size;i++)
+    for(int i=0;i<10;i++)
     {
         int k;
         scanf("%d",&k);
         insert(k);              // Inserting values to Tree
     }
-    for(int i=0;i<size;i++)
+    
+    for(int i=0;i<n;i++)
     {
         printf("%d  ",arr[i]);      // Printing Tree
     }
