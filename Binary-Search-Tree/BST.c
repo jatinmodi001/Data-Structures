@@ -111,6 +111,7 @@ void delmax(Tree** root)
     *root = del_max(*root);
 }
 
+
 Tree* del_Element(Tree* node,int element)       // Deletes node with given value in Tree.
 {
     if(node == NULL)
@@ -123,13 +124,14 @@ Tree* del_Element(Tree* node,int element)       // Deletes node with given value
         else if(node->right == NULL)
             return node->left;
 
-        Tree *itr = node->right;
-        while(itr->left->left)
+        Tree* temp = node->right;
+        while(temp->left)
         {
-            itr = itr->left;
+        	temp = temp->left;
         }
-        Tree *temp = itr->left;
-        itr->left = NULL;
+        del_min(node->right);
+        temp->left = node->left;
+        temp->right = node->right;
         return temp;
     }
     else if(node->key > element)
